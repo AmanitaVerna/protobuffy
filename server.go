@@ -124,8 +124,8 @@ func (server *Server) listen() {
 	}
 }
 
-// ShutDown shuts down the listener, closes all connections, closes all channels, and sets everything to nil.
-func (server *Server) ShutDown() {
+// Shutdown shuts down the listener, closes all connections, closes all channels, and sets everything to nil.
+func (server *Server) Shutdown() {
 	// We've been asked to shut down the server.
 	server.listener.Close()
 	for _, c := range server.conns {

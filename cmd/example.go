@@ -42,7 +42,7 @@ func ServerStuff() (err error) {
 			case ShutdownMessageID:
 				if shutdownMsg, ok := msg.Data().(*pb.ShutdownMessage); ok {
 					fmt.Printf("Server shutdown requested by client at address %v. Reason: %v\n", msg.Address(), shutdownMsg.Text)
-					server.ShutDown()
+					server.Shutdown()
 					server = nil
 				}
 			}
